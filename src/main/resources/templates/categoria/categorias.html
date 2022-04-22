@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/img/tiend.ico" type="image/ico" />
+	<title>Magaly Market</title>
+
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/font-awesome.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/custom.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/sweetalert2.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/animate.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+
+<body class="nav-md">
+	<div class="container body">
+		<div class="main_container">
+
+			<header th:replace="layouts/fragmentos :: menu"> </header>
+			<div class="right_col" role="main">
+
+
+
+				<div class="">
+					<div class="page-title">
+						<div class="title_left">
+							<h3>Módulo Categoría</h3>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="row">
+						<div class="col-md-12 col-sm-12 ">
+							<div class="x_panel">
+								<div class="x_title">
+									<h2>
+										Registro de Categoría <small>Abarrotes, Librería,
+											Bazar, entre otros.</small>
+									</h2>
+									<ul class="nav navbar-right panel_toolbox">
+										<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+										<li><a class="close-link"><i class="fa fa-close"></i></a>
+										</li>
+									</ul>
+									<div class="clearfix"></div>
+								</div>
+								<div class="x_content">
+									<br />
+									<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"
+										th:action="@{/categoria/form}" th:object="${categoria}" method="post">
+
+
+										<div class="item form-group">
+											<label class="col-form-label col-md-3 col-sm-3 label-align"
+												for="first-name">Nombre de Categoría </label>
+											<div class="col-md-6 col-sm-6 ">
+												<input th:field="*{nombre}" type="text" id="first-name"
+													required="required" class="form-control "
+													placeholder="Ingresar nombre de categoría ">
+											</div>
+										</div>
+
+										<div class="item form-group">
+											<label class="col-form-label col-md-3 col-sm-3 label-align"
+												for="first-name">Descripción de Categoría </label>
+											<div class="col-md-6 col-sm-6 ">
+												<input th:field="*{descripcion}" type="text" id="first-name"
+													required="required" class="form-control "
+													placeholder="Ingresar descripción de categoría ">
+											</div>
+										</div>
+
+
+
+
+
+										<div class="ln_solid"></div>
+										<div class="item form-group">
+											<div class="col-md-6 col-sm-6 offset-md-3">
+												<button class="btn btn-primary" type="reset">Descartar</button>
+												<button type="submit" id="btnguardar"
+													class="btn btn-success">Guardar</button>
+											</div>
+										</div>
+
+									</form>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="col-md-12 col-sm-12  ">
+							<div class="x_panel">
+								<div class="x_title">
+									<h2>
+										Listado de Categoría <small>Abarrotes, Librería,
+											Bazar, entre otros.</small>
+									</h2>
+
+
+									<ul class="nav navbar-right panel_toolbox">
+
+
+										<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+
+										<li><a class="close-link"><i class="fa fa-close"></i></a>
+										</li>
+									</ul>
+									<div class="clearfix"></div>
+								</div>
+								<div class="x_content">
+
+
+									<div class="title_right">
+										<div class="col-md-12 col-sm-12   form-group pull-right top_search">
+
+										</div>
+									</div>
+
+									<div class="card-body">
+										<table id="datatablesSimple">
+											<thead>
+												<tr>
+													<th>#</th>
+													<th>Nombre de categoria</th>
+
+													<th>Descripcion de categoria</th>
+
+													<th>Acciones</th>
+
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>#</th>
+													<th>Nombre de categoria</th>
+
+													<th>Descripcion de categoria</th>
+
+													<th>Acciones</th>
+												</tr>
+											</tfoot>
+											<tbody>
+												<tr th:each="item: ${listaCategorias}">
+													<td th:text="${item.id}"></td>
+													<td th:text="${item.nombre}"></td>
+													<td th:text="${item.descripcion}"></td>
+
+
+
+													<th>
+													<a href="#" th:id="${item.id}" th:param1="${item.nombre}"
+															th:param2="${item.descripcion}"
+															class="btn btn-warning editarCategoria" data-toggle="modal"
+															data-target="#editmodal"> <i class="fa fa-pencil-square-o"
+																aria-hidden="true"></i></a>
+																
+																<a th:href="@{/categoria/eliminar/}+${item.id}"
+															class="btn btn-danger"
+															onclick="return confirm('Desea Eliminar?')"><i
+																class="fa fa-trash" aria-hidden="true"></i></a>
+																</th>
+																
+													
+												</tr>
+
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+				</div>
+			</div>
+
+
+
+
+
+
+		</div>
+
+		<footer th:replace="layouts/fragmentos :: derechos"></footer>
+
+	</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Editar Categoria</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form th:action="@{/categoria/form}" th:object="${categoria}" method="post">
+					<input type="hidden" th:field="*{id}" />
+					<div class="modal-body">
+						<h6>Nombre</h6>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+							</div>
+							<input type="text" class="form-control" id="txtNombre" name="nombre"
+								placeholder="Ingrese nombre de la categoria" aria-label="Username"
+								aria-describedby="basic-addon1">
+						</div>
+
+						<h6>Descripcion</h6>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+							</div>
+							<input type="text" class="form-control" id="txtDescripcion" name="descripcion"
+								placeholder="Ingrese correo de la empresa" aria-label="Username"
+								aria-describedby="basic-addon1">
+						</div>
+
+
+
+					</div>
+					<div id="boton" class="modal-footer text-left">
+						<input type="button" value="Cancelar" id="registrar" class="btn btn-primary"
+							data-dismiss="modal" />
+						<button type="submit"   class="btn btn-success">Guardar Cambios</button>
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script th:src="@{/js/jquery.min.js}"></script>
+	<script th:src="@{/js/jquery-3.6.0.min.js}"></script>
+	<script th:src="@{/js/sweetalert2.all.min.js}"></script>
+	<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+	<script th:src="@{/js/custom.min.js}"></script>
+	<script th:src="@{/js/scripts.js}"></script>
+	<script th:src="@{/js/simple-datatables@latest.js}"></script>
+	<script th:src="@{/js/datatables-simple-demo.js}"></script>
+	<script th:src="@{/js/alert.js}"></script>
+	<script th:src="@{/js/categoria.js}"></script>
+
+</body>
+
+</html>

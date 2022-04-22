@@ -1,0 +1,77 @@
+body {
+    background-image: url(../img/t.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.formulario {
+    background: rgba(255, 255, 255, 0.849);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 1px 1px 30px #1842ad;
+    color: white;
+}
+
+.form-control {
+    background: rgba(0, 0, 0, .3);
+    border-style: none;
+    transition: 0.5s ease-in;
+    outline: none;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    background: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: rgb(70, 70, 70);
+}
+
+.ingresar {
+    background: #43547e;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 700!important;
+    color: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.568);
+    transition: 0.5s ease-in;
+}
+
+.ingresar:hover {
+    color: rgb(252, 236, 236);
+}
+
+.olvide {
+    color: rgb(0, 0, 0);
+    text-decoration-style: none;
+    text-decoration-line: none;
+}
+
+.olvide:hover {
+    color: rgb(0, 0, 0);
+    text-decoration-style: none;
+    text-decoration-line: none;
+    cursor: pointer;
+}
+
+.olvide1 {
+    color: white;
+    text-decoration-style: none;
+    text-decoration-line: none;
+    font-size: 20px;
+    font-weight: 700!important;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, .5);
+}
+
+.olvide1:hover {
+    color: rgb(46, 45, 45);
+    text-decoration-style: none;
+    text-decoration-line: none;
+    cursor: pointer;
+}

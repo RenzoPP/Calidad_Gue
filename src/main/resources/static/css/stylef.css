@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "letras";
+    src: url("../fonts/Best\ School\ Font\ by\ Kelik\ \(7NTypes\).otf");
+}
+
+.titulo{
+    background-color: #3f97ff;
+    font-family: "letras";
+}
+
+.titul{
+   
+    font-family: "letras";
+}

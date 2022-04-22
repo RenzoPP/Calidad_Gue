@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/img/tiend.ico" type="image/ico" />
+<title>SYSTEM PERÚ</title>
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/font-awesome.min.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/custom.min.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/sweetalert2.min.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/animate.min.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+
+<body class="nav-md">
+	<div class="container body">
+		<div class="main_container">
+
+			<header th:replace="layouts/fragmentos :: menu"> </header>
+
+			 <div class="right_col" role="main">
+
+
+
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Información de Sucursales</h3>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Registro de Sucursales <small>Regiones, Zonas u/o Distritos.</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br />
+                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+  
+                      <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nombre Sucursal 
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                          <input type="text" id="first-name"  required pattern="[A-Za-z]{3,30}" title="Solo letras. Tamaño mínimo: 3. Tamaño máximo: 30" class="form-control " placeholder="Ingresar nombre">
+                        </div>
+                      </div>
+                      
+                      <div class="item form-group">
+                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Teléfono Sucursal</label>
+                        <div class="col-md-6 col-sm-6 ">
+                          <input id="middle-name" class="form-control" type="text" name="middle-name" required pattern="[0-9]{9}" title="Solo números.  Tamaño máximo: 9" placeholder="Ingresar teléfono">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Correo Sucursal</label>
+                        <div class="col-md-6 col-sm-6 ">
+                          <input id="middle-name" class="form-control" type="text" name="middle-name" required pattern="[[A-Za-z0-9@]{15,45}" title="Tamaño mínimo: 15. Tamaño máximo: 45" placeholder="Ingresar Correo">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Dirección Sucursal</label>
+                        <div class="col-md-6 col-sm-6 ">
+                          <input id="middle-name" class="form-control" type="text" name="middle-name" required pattern="[[A-Za-z0-9]{10,30}" title="Tamaño mínimo: 10. Tamaño máximo: 30" placeholder="Ingresar dirección">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Observación Sucursal</label>
+                        <div class="col-md-6 col-sm-6 ">
+                          <input id="middle-name" class="form-control" type="text" name="middle-name" required pattern="[[A-Za-z0-9]{10,30}" title="Tamaño mínimo: 10. Tamaño máximo: 30"  placeholder="Ingresar observación">
+                        </div>
+                      </div>
+                      
+                      
+                      
+                      <div class="ln_solid"></div>
+                      <div class="item form-group">
+                        <div class="col-md-6 col-sm-6 offset-md-3">
+                          <button class="btn btn-primary" type="reset">Descartar</button>
+                          <button type="submit" id="btnguardar" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+  
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-md-12 col-sm-12  ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Listado de Sucursales <small>Regiones, Zonas u/o Distritos.</small></h2>
+
+                    
+                    <ul class="nav navbar-right panel_toolbox">
+
+                      
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+
+                    <div class="title_right">
+                      <div class="col-md-12 col-sm-12   form-group pull-right top_search">
+                        
+                      </div>
+                      </div>
+
+                      <div class="card-body">
+                          <table id="datatablesSimple">
+                              <thead>
+                                  <tr>
+                                      <th>#</th>
+                                      <th>Nombre Sucursal</th>
+                                      <th>Teléfono Sucursal</th>
+                                      <th>Correo Sucursal</th>
+                                      <th>Dirección Sucursal</th>
+                                      <th>Observación Sucursal</th>
+                                      <th>Acciones</th>
+                                      
+                                  </tr>
+                              </thead>
+                              <tfoot>
+                                  <tr>
+                                    <th>#</th>
+                                    <th>Nombre Sucursal</th>
+                                    <th>Teléfono Sucursal</th>
+                                    <th>Correo Sucursal</th>
+                                    <th>Dirección Sucursal</th>
+                                    <th>Observación Sucursal</th>
+                                    <th>Acciones</th>
+                                  </tr>
+                              </tfoot>
+                              <tbody>
+                                  <tr>
+                                      <td>1</td>
+                                      <td>144710</td>
+                                      <td>45698754</td>
+                                      <td>Will</td>
+                                      <td>Soriano</td>
+                                      <td>987654123</td>
+                                    
+                                    
+                                      <td><a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleMo" href="#">Editar</a>
+                                        <a class="btn btn-danger btn-sm" id="btneliminar" data-toggle="modal" data-target="" href="#">Eliminar</a>
+                                        
+                                      </td>
+                                       
+                                      </tr>
+                                  <tr>
+                                      <td>2</td>
+                                      <td>725478</td>
+                                      <td>Tokyo</td>
+                                      <td>Jonas</td>
+                                      <td>987412589</td>
+                                      <td>Vendedor</td>
+                                      
+                                     
+                                      <td><a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleMo" href="#">Editar</a>
+                                        <a class="btn btn-danger btn-sm" id="btneliminar" data-toggle="modal" data-target="" href="#">Eliminar</a>
+                                        
+                                      </td>
+                                  </tr>
+                                
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+            </div>
+
+
+            
+        </div>
+        </div>
+			 
+
+
+
+		</div>
+
+		<footer th:replace="layouts/fragmentos :: derechos"></footer>
+
+	</div>
+	</div>
+
+
+    <div class="modal fade" id="exampleMo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Editar información de Sucursal</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <h6>Teléfono de Sucursal</h6>
+            <div class="input-group mb-3">
+      <div class="input-group-prepend">
+      </div>
+      <input type="text" class="form-control" id="completo" placeholder="Ingrese teléfono de Sucursal" aria-label="Username" aria-describedby="basic-addon1">
+       </div>
+            
+            <h6>Correo de Sucursal</h6>
+            <div class="input-group mb-3">
+      <div class="input-group-prepend">
+      </div>
+      <input type="text" class="form-control" id="completo" placeholder="Ingrese correo de sucursal" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+
+      <h6>Dirección de Sucursal</h6>
+      <div class="input-group mb-3">
+<div class="input-group-prepend">
+</div>
+<input type="text" class="form-control" id="completo" placeholder="Ingrese dirección de sucursal" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+    
+        <h6>Observación de Sucursal</h6>
+        <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        </div>
+        <input type="text" class="form-control" id="completo" placeholder="Ingrese alguna observación" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+    
+          </div>
+          <div id="boton" class="modal-footer text-left">
+            <input type="submit" value="Cancelar" id="registrar" class="btn btn-primary" data-dismiss="modal" />
+            <input type="submit"  id="btnguardar" class="btn btn-success"  value="Guardar" />
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+	<script th:src="@{/js/jquery.min.js}"></script>
+	<script th:src="@{/js/jquery-3.6.0.min.js}"></script>
+	<script th:src="@{/js/sweetalert2.all.min.js}"></script>
+	<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+	<script th:src="@{/js/custom.min.js}"></script>
+	<script th:src="@{/js/scripts.js}"></script>
+	<script th:src="@{/js/simple-datatables@latest.js}"></script>
+	<script th:src="@{/js/datatables-simple-demo.js}"></script>
+	<script th:src="@{/js/alert.js}"></script>
+
+</body>
+</html>

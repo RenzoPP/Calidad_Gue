@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+	<header th:fragment="menu">
+		<div class="col-md-3 left_col">
+			<div class="left_col scroll-view">
+				<div class="navbar nav_title" style="border: 0;">
+					<a th:href="@{/principal/}" class="site_title"><i
+						class="fa fa-building-o"></i> <span>SYSTEM PERU</span></a>
+				</div>
+				<div class="clearfix"></div>
+
+				<div class="profile clearfix">
+					<div class="profile_pic">
+						<img src="/img/avatar.jpg" alt="..."
+							class="img-circle profile_img">
+					</div>
+					<div class="profile_info">
+						<span>Bienvenido,</span>
+						<h2>Manuel Santisteban</h2>
+					</div>
+				</div>
+
+				<br />
+
+				<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+					<div class="menu_section">
+						<h3>General</h3>
+						<ul class="nav side-menu">
+							<li><a><i class="fa fa-home"></i> Archivo <span
+									class="fa fa-chevron-down"></span></a>
+								<ul class="nav child_menu">
+									<li><a th:href="@{/empresa/}">Empresa</a></li>
+									<li><a th:href="@{/sucursales/}">Sucursales</a></li>
+								</ul></li>
+							<li><a><i class="fa fa-desktop"></i> Usuarios <span
+									class="fa fa-chevron-down"></span></a>
+								<ul class="nav child_menu">
+									<li><a th:href="@{/usuario/}">Registrar Usuario</a></li>
+									<li><a th:href="@{/roles/}">Puesto de trabajo</a></li>
+								</ul></li>
+							<li><a><i class="fa fa-edit"></i> Registro<span
+									class="fa fa-chevron-down"></span></a>
+								<ul class="nav child_menu">
+									<li><a th:href="@{/cliente/}">Clientes</a></li>
+									<li><a th:href="@{/proveedor/}">Proveedores</a></li>
+									<li><a th:href="@{/categoria/}">Categoría</a></li>
+									<li><a th:href="@{/producto/}">Productos</a></li>
+									<li><a th:href="@{/puesto/}">Puestos</a></li>
+								</ul></li>
+					</div>
+
+					 
+
+				 
+
+					 
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="top_nav">
+			<div class="nav_menu">
+				<div class="nav toggle">
+					<a id="menu_toggle"><i class="fa fa-bars"></i></a>
+				</div>
+				<nav class="nav navbar-nav">
+					<ul class=" navbar-right">
+						<li class="nav-item dropdown open" style="padding-left: 15px;">
+							<a href="javascript:;" class="user-profile dropdown-toggle"
+							aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown"
+							aria-expanded="false"> <img src="/img/avatar.jpg" alt="">Manuel
+								Santisteban
+						</a>
+							<div class="dropdown-menu dropdown-usermenu pull-right"
+								aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" th:href="@{/actualizar/}">
+									Actualizar Datos</a> <a class="dropdown-item" th:href="@{/ayuda/}">Ayuda</a>
+								<a class="dropdown-item" id="btnsalir" ><i
+									class="fa fa-sign-out pull-right"></i> Cerrar Sesión</a>
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+</body>
+</header>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer th:fragment="derechos">
+	<div class="pull-right">
+		Todos los derechos reservados <a>System
+			Perú</a>
+	</div>
+	<div class="clearfix"></div>
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>

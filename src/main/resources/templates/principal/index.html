@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/img/tiend.ico" type="image/ico" />
+    <title>SYSTEM PERÚ</title>
+    
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/font-awesome.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/custom.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/sweetalert2.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/animate.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/calculator.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/conversor.css}">
+  </head>
+  
+ <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+ 
+  <header th:replace="layouts/fragmentos :: menu">  </header>
+ 
+  <div class="right_col" role="main">
+                        <div class="text-center"> 
+                          <script type="text/javascript">
+                            //<![CDATA[
+                            function makeArray() {
+                            for (i = 0; i<makeArray.arguments.length; i++)
+                            this[i + 1] = makeArray.arguments[i];}
+                            var months = new makeArray('Enero','Febrero','Marzo','Abril','Mayo',
+                            'Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
+                            var date = new Date();
+                            var day = date.getDate();
+                            var month = date.getMonth() + 1;
+                            var yy = date.getYear();
+                            var year = (yy < 1000) ? yy + 1900 : yy;
+                            document.write("Hoy es " + day + " de " + months[month] + " del " + year);
+                            //]]>
+                            </script>    
+                            
+                          <script type="text/javascript">
+                            function startTime(){
+                            today=new Date();
+                            h=today.getHours();
+                            m=today.getMinutes();
+                            s=today.getSeconds();
+                            m=checkTime(m);
+                            s=checkTime(s);
+                            document.getElementById('reloj').innerHTML=h+":"+m+":"+s;
+                            t=setTimeout('startTime()',500);}
+                            function checkTime(i)
+                            {if (i<10) {i="0" + i;}return i;}
+                            window.onload=function(){startTime();}
+                            </script>
+                            <div id="reloj" style="font-size:45px;"></div>         
+                        </div>
+          
+
+
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 ">
+                            <div class="x_panel">
+                              <div class="x_title">
+                                <h2>Calculadora Virtual</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                   
+                                </ul>
+                                <div class="clearfix"></div>
+                              </div>
+                              <form name="calculator">
+                                <h3>Calculadora  </h3>
+                                <p>Haz algún cálculo para ver el resultado.</p>
+                                <input type="textfield" name="ans" value="">
+                                <br>
+                                <input type="button" value="1" onClick="document.calculator.ans.value+='1'">
+                                <input type="button" value="2" onClick="document.calculator.ans.value+='2'">
+                                <input type="button" value="3" onClick="document.calculator.ans.value+='3'">
+                                <input type="button" value="+" onClick="document.calculator.ans.value+='+'">
+                                <br>
+                                <input type="button" value="4" onClick="document.calculator.ans.value+='4'">
+                                <input type="button" value="5" onClick="document.calculator.ans.value+='5'">
+                                <input type="button" value="6" onClick="document.calculator.ans.value+='6'">
+                                <input type="button" value="-" onClick="document.calculator.ans.value+='-'">
+                                <br>
+                                <input type="button" value="7" onClick="document.calculator.ans.value+='7'">
+                                <input type="button" value="8" onClick="document.calculator.ans.value+='8'">
+                                <input type="button" value="9" onClick="document.calculator.ans.value+='9'">
+                                <input type="button" value="*" onClick="document.calculator.ans.value+='*'">
+                                <br>
+                                <input type="button" value="0" onClick="document.calculator.ans.value+='0'">
+                                <input type="reset" value="c">
+                                <input type="button" value="/" onClick="document.calculator.ans.value+='/'">
+                                <input type="button" value="=" onClick="document.calculator.ans.value=eval(document.calculator.ans.value)">
+                                </form>
+                            </div>
+                          </div>
+                          </div>
+
+
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 ">
+                              <div class="x_panel">
+                                <div class="x_title">
+                                  <h2>Conversor de Monedas: Dólares a Soles</h2>
+                                  <ul class="nav navbar-right panel_toolbox">
+                                     
+                                  </ul>
+                                  <div class="clearfix"></div>
+                                </div>
+                                <div class="box-convertir">
+                                  <label>Ingrese su moneda en Dólares</label>
+                                  <input id="monedaAconvertir" type="number" placeholder="Ingresar la moneda en dólares. Ejemplo: $ 10.00"/>
+                                  <label>Precio de compra del Dólar</label>
+                                  <input id="monedadolar" type="number" placeholder="Ingresar el precio de compra en soles. Ejemplo: S/. 4.11"/>
+                                  <button class="btn btn-primary" onclick="convertirMoneda('sol')">Convertir a soles</button>
+                                </div> 
+                                <div class="box-resultado" id="resultado"></div>
+                                <br>
+                              </div>
+                            </div>
+                            </div>
+          </div>
+        </div>
+
+		<footer th:replace="layouts/fragmentos :: derechos"></footer>
+
+	</div>
+    </div>
+  
+
+   <script th:src="@{/js/jquery.min.js}"></script>
+   <script th:src="@{/js/jquery-3.6.0.min.js}"></script>
+   <script th:src="@{/js/sweetalert2.all.min.js}"></script>
+   <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+   <script th:src="@{/js/custom.min.js}"></script>
+   <script th:src="@{/js/scripts.js}"></script>
+   <script th:src="@{/js/simple-datatables@latest.js}"></script>
+   <script th:src="@{/js/alert.js}"></script>
+   <script th:src="@{/js/conversor.js}"></script> 
+  </body>
+</html>

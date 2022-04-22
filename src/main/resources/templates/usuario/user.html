@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/img/tiend.ico" type="image/ico" />
+<title>SYSTEM PERU</title>
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/font-awesome.min.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/custom.min.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/sweetalert2.min.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/animate.min.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+
+<body class="nav-md">
+	<div class="container body">
+		<div class="main_container">
+
+			<header th:replace="layouts/fragmentos :: menu"> </header>
+
+			<div class="right_col" role="main">
+
+
+
+				<div class="">
+					<div class="page-title">
+						<div class="title_left">
+							<h3>Módulo Usuarios</h3>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="row">
+						<div class="col-md-12 col-sm-12 ">
+							<div class="x_panel">
+								<div class="x_title">
+									<h2>
+										Registro de Usuarios <small>Administradores,
+											Vendedores, Contadores, entre otros.</small>
+									</h2>
+									<ul class="nav navbar-right panel_toolbox">
+										<li><a class="collapse-link"><i
+												class="fa fa-chevron-up"></i></a></li>
+										<li><a class="close-link"><i class="fa fa-close"></i></a>
+										</li>
+									</ul>
+									<div class="clearfix"></div>
+								</div>
+								<div class="x_content">
+									<br />
+									<form id="demo-form2" data-parsley-validate
+										class="form-horizontal form-label-left">
+
+
+										<div class="item form-group">
+											<label class="col-form-label col-md-3 col-sm-3 label-align"
+												for="last-name">DNI del Usuario </label>
+											<div class="col-md-6 col-sm-6 ">
+												<input type="text" id="last-name" name="last-name" required
+													pattern="[0-9]{8}" title="Solo números.  Tamaño máximo: 11"
+													class="form-control" placeholder="Ingresar DNI">
+											</div>
+										</div>
+										<div class="item form-group">
+											<label for="middle-name"
+												class="col-form-label col-md-3 col-sm-3 label-align">Nombre
+												del Usuario</label>
+											<div class="col-md-6 col-sm-6 ">
+												<input type="text" id="first-name" required
+													pattern="[A-Za-z]{3,30}"
+													title="Solo letras. Tamaño mínimo: 3. Tamaño máximo: 30"
+													class="form-control " placeholder="Ingresar nombre">
+											</div>
+										</div>
+										<div class="item form-group">
+											<label for="middle-name"
+												class="col-form-label col-md-3 col-sm-3 label-align">Apellido
+												del Usuario</label>
+											<div class="col-md-6 col-sm-6 ">
+												<input type="text" id="first-name" required
+													pattern="[A-Za-z]{3,30}"
+													title="Solo letras. Tamaño mínimo: 3. Tamaño máximo: 30"
+													class="form-control " placeholder="Ingresar apellido">
+											</div>
+										</div>
+										<div class="item form-group">
+											<label for="middle-name"
+												class="col-form-label col-md-3 col-sm-3 label-align">Celular
+												del Usuario</label>
+											<div class="col-md-6 col-sm-6 ">
+												<input type="text" id="last-name" name="last-name" required
+													pattern="[0-9]{8}" title="Solo números.  Tamaño máximo: 11"
+													class="form-control" placeholder="Ingresar celular">
+											</div>
+										</div>
+										<div class="item form-group">
+											<label for="middle-name"
+												class="col-form-label col-md-3 col-sm-3 label-align">Acceso
+												del Usuario</label>
+											<div class="col-md-6 col-sm-6">
+												<select class="form-control">
+													<option>Seleccionar Acceso</option>
+													<option>Administrador</option>
+													<option>Vendedor</option>
+													<option>Contador</option>
+													<option>Practicante</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="item form-group">
+											<label for="middle-name"
+												class="col-form-label col-md-3 col-sm-3 label-align">Correo
+												del Usuario</label>
+											<div class="col-md-6 col-sm-6 ">
+												<input id="middle-name" class="form-control" type="text"
+													name="middle-name" placeholder="Ingresar correo">
+											</div>
+										</div>
+										<div class="item form-group">
+											<label for="middle-name"
+												class="col-form-label col-md-3 col-sm-3 label-align">Contraseña
+												del Usuario</label>
+											<div class="col-md-6 col-sm-6 ">
+
+												<input type="password" class="form-control"
+													required="required" id="inputPassword2"
+													placeholder="Ingresar contraseña">
+											</div>
+										</div>
+
+										<div class="item form-group">
+											<label for="middle-name"
+												class="col-form-label col-md-3 col-sm-3 label-align">Estado
+												del Usuario</label>
+											<div class="col-md-6 col-sm-6">
+												<select class="form-control">
+													<option>Seleccionar Estado</option>
+													<option>0</option>
+													<option>1</option>
+
+												</select>
+											</div>
+										</div>
+										<div class="item form-group">
+											<label for="middle-name"
+												class="col-form-label col-md-3 col-sm-3 label-align">Foto
+												del Usuario</label>
+											<div class="col-md-6 col-sm-6 ">
+												<div class="btn-group">
+
+													<input type="file" data-role="magic-overlay"
+														data-target="#pictureBtn" data-edit="insertImage" />
+												</div>
+											</div>
+										</div>
+
+										<div class="ln_solid"></div>
+										<div class="item form-group">
+											<div class="col-md-6 col-sm-6 offset-md-3">
+												<button class="btn btn-primary" type="reset">Descartar</button>
+												<button type="submit" id="btnguardar"
+													class="btn btn-success">Guardar</button>
+											</div>
+										</div>
+
+									</form>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="col-md-12 col-sm-12  ">
+							<div class="x_panel">
+								<div class="x_title">
+									<h2>
+										Listado de Usuarios <small>Administradores,
+											Vendedores, Contadores, entre otros.</small>
+									</h2>
+
+
+									<ul class="nav navbar-right panel_toolbox">
+
+
+										<li><a class="collapse-link"><i
+												class="fa fa-chevron-up"></i></a></li>
+
+										<li><a class="close-link"><i class="fa fa-close"></i></a>
+										</li>
+									</ul>
+									<div class="clearfix"></div>
+								</div>
+								<div class="x_content">
+
+
+									<div class="title_right">
+										<div
+											class="col-md-12 col-sm-12   form-group pull-right top_search">
+
+										</div>
+									</div>
+
+									<div class="card-body">
+										<table id="datatablesSimple">
+											<thead>
+												<tr>
+													<th>#</th>
+
+													<th>DNI</th>
+													<th>Nombres</th>
+													<th>Apellidos</th>
+													<th>Celular</th>
+													<th>Acceso</th>
+													<th>Correo</th>
+													<th>Contraseña</th>
+													<th>Fecha Registro</th>
+													<th>Foto</th>
+													<th>Estado</th>
+													<th>Acciones</th>
+
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>#</th>
+
+													<th>DNI</th>
+													<th>Nombres</th>
+													<th>Apellidos</th>
+													<th>Celular</th>
+													<th>Acceso</th>
+													<th>Correo</th>
+													<th>Contraseña</th>
+													<th>Fecha Registro</th>
+													<th>Foto</th>
+													<th>Estado</th>
+													<th>Acciones</th>
+												</tr>
+											</tfoot>
+											<tbody>
+												<tr>
+													<td>1</td>
+
+													<td>45698754</td>
+													<td>Will</td>
+													<td>Soriano</td>
+													<td>987654123</td>
+													<td>Administrador</td>
+													<td>144710@upn.pe</td>
+													<td>Edinburgh</td>
+													<td>2011/04/25</td>
+													<td>foto.jpg</td>
+													<td>1</td>
+													<td><a class="btn btn-warning btn-sm"
+														data-toggle="modal" data-target="#exampleMo" href="#">Editar</a>
+														<a class="btn btn-danger btn-sm" data-toggle="modal"
+														data-target="" href="#">Eliminar</a></td>
+												</tr>
+												<tr>
+													<td>2</td>
+
+													<td>Tokyo</td>
+													<td>Jonas</td>
+													<td>987412589</td>
+													<td>Vendedor</td>
+													<td>111@yahoo.com</td>
+													<td>14875</td>
+													<td>virtual</td>
+													<td>2011/04/25</td>
+													<td>img.jpg</td>
+													<td>0</td>
+													<td><a class="btn btn-warning btn-sm"
+														data-toggle="modal" data-target="#exampleMo" href="#">Editar</a>
+														<a class="btn btn-danger btn-sm" data-toggle="modal"
+														data-target="" href="#">Eliminar</a></td>
+												</tr>
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+				</div>
+			</div>
+
+
+
+
+		</div>
+
+		<footer th:replace="layouts/fragmentos :: derechos"></footer>
+
+	</div>
+	</div>
+
+
+
+	<div class="modal fade" id="exampleMo" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Editar Datos
+						del Usuario</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<div class="modal-body">
+					<h6>Celular del Usuario</h6>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend"></div>
+						<input type="text" class="form-control" id="completo"
+							placeholder="Ingrese celular del usuario" aria-label="Username"
+							aria-describedby="basic-addon1">
+					</div>
+
+					<h6>Correo del Usuario</h6>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend"></div>
+						<input type="text" class="form-control" id="completo"
+							placeholder="Ingrese correo del usuario" aria-label="Username"
+							aria-describedby="basic-addon1">
+					</div>
+
+					<h6>Acceso del Usuario</h6>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend"></div>
+						<select class="form-control">
+							<option>Seleccionar Acceso</option>
+							<option>Administrador</option>
+							<option>Vendedor</option>
+							<option>Contador</option>
+							<option>Practicante</option>
+						</select>
+
+					</div>
+
+
+
+
+					<h6>Contraseña del Usuario</h6>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend"></div>
+						<input type="password" class="form-control" id="inputPassword2"
+							placeholder="Ingrese contraseña del usuario"
+							aria-label="Username" aria-describedby="basic-addon1">
+
+					</div>
+
+					<h6>Foto del usuario</h6>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend"></div>
+						<input type="file" class="form-control-file"
+							id="exampleFormControlFile1">
+					</div>
+
+					<h6>Estado del Usuario</h6>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend"></div>
+						<select class="form-control">
+							<option>Seleccionar Estado</option>
+							<option>0</option>
+							<option>1</option>
+
+						</select>
+
+					</div>
+
+
+				</div>
+				<div id="boton" class="modal-footer text-left">
+					<input type="submit" value="Cancelar" id="registrar"
+						class="btn btn-primary" data-dismiss="modal" /> <input
+						type="submit" value="Guardar" id="registrar"
+						class="btn btn-success" data-dismiss="modal" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script th:src="@{/js/jquery.min.js}"></script>
+	<script th:src="@{/js/jquery-3.6.0.min.js}"></script>
+	<script th:src="@{/js/sweetalert2.all.min.js}"></script>
+	<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+	<script th:src="@{/js/custom.min.js}"></script>
+	<script th:src="@{/js/scripts.js}"></script>
+	<script th:src="@{/js/simple-datatables@latest.js}"></script>
+	<script th:src="@{/js/datatables-simple-demo.js}"></script>
+	<script th:src="@{/js/alert.js}"></script>
+
+</body>
+</html>

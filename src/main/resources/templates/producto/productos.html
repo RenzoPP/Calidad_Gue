@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/img/tiend.ico" type="image/ico" />
+<title>SYSTEM PERÚ</title>
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/font-awesome.min.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/custom.min.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/sweetalert2.min.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/animate.min.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+
+<body class="nav-md">
+	<div class="container body">
+		<div class="main_container">
+
+			<header th:replace="layouts/fragmentos :: menu"> </header>
+
+			 
+        <div class="right_col" role="main">
+
+
+
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Módulo Productos</h3>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Registro de Productos <small>Galletas, Bebidas, Dulces, Caramelos, entre otros.</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br />
+                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" th:action="@{/producto/form}" th:object="${producto}" method="post">
+ 
+
+                      
+                      <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Código del Producto
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                          <input type="text" id="last-name" th:field="*{codigopro}" name="last-name"  class="form-control" placeholder="Ingresar código">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Descripción del Producto</label>
+                        <div class="col-md-6 col-sm-6 ">
+                          <input type="text" id="first-name"  th:field="*{nombrepro}" required pattern="[A-Za-z]{3,30}" title="Solo letras. Tamaño mínimo: 3. Tamaño máximo: 30" class="form-control " placeholder="Ingresar  descripción">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Categoría del Producto</label>
+                        <div class="col-md-6 col-sm-6">
+                          <select class="form-control" th:field="*{id_cat}">
+                           <option value="">seleccione una opcion</option>
+									<option th:each="item : ${listaCategoria}" th:value="${item.id}"
+										th:text="${item.nombre}"></option>
+                          </select>
+                        </div>
+                      </div>
+                      
+                       
+                      <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Precio Compra del Producto
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                          <input type="text" id="last-name" th:field="*{pcompra}" name="last-name"  class="form-control" placeholder="Ingresar precio de compra">
+                        </div>
+                      </div>
+                      
+                      <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Precio Venta del Producto
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                          <input type="text" id="last-name" name="last-name" th:field="*{pventa}"  class="form-control" placeholder="Ingresar precio de venta">
+                        </div>
+                      </div>
+
+                       
+
+                      
+                       
+                      
+                      
+                      <div class="ln_solid"></div>
+                      <div class="item form-group">
+                        <div class="col-md-6 col-sm-6 offset-md-3">
+                          <button class="btn btn-primary" type="reset">Descartar</button>
+                          <button type="submit" id="btnguardar" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+  
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-md-12 col-sm-12  ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Listado de Productos <small>Galletas, Bebidas, Dulces, Caramelos, entre otros.</small></h2>
+
+                    
+                    <ul class="nav navbar-right panel_toolbox">
+
+                      
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+
+                    <div class="title_right">
+                      <div class="col-md-12 col-sm-12   form-group pull-right top_search">
+                        
+                      </div>
+                      </div>
+
+                      <div class="card-body">
+                          <table id="datatablesSimple">
+                              <thead>
+                                  <tr >
+                                      <th>#</th>
+                                     
+                                      <th>Código</th>
+                                      <th>Descripción</th>
+                                      <th>categoría</th>
+                                       
+                                      <th>P. Compra</th>
+                                      <th>P. Venta</th>
+                                    
+                                     
+                                    
+                                      <th>Acciones</th>
+                                      
+                                  </tr >
+                              </thead>
+                              <tfoot>
+                                  <tr >
+                                    <th  >#</th>
+                                     
+                                    <th >Código</th >
+                                    <th  >Descripción</th >
+                                    
+                                     
+                                      <th>categoría</th>
+                                       
+                                      <th>P. Compra</th>
+                                      <th>P. Venta</th>
+                                       <th>Acciones</th>
+                                  </tr >
+                              </tfoot>
+                              <tbody>
+                              
+                                  <tr th:each="item:${listaProductos}">
+                                  
+                                      <td th:text="${item.id}"></td>
+                                      
+                                      <td  th:text="${item.codigopro}"></td >
+                                      <td th:text="${item.nombrepro}"></td >
+                                      <td th:text="${item.id_cat}"></td >
+                                      <td  th:text="${item.pcompra}"></td >
+                                      <td th:text="${item.pventa}"></td >
+                                       
+                                       
+                                       
+ <th >   <a href="#"  th:id="${item.id}" th:param1="${item.codigopro}" th:param2="${item.nombrepro}"   th:param3="${item.id_cat}" th:param4="${item.pcompra}"
+															th:param5="${item.pventa}"
+															class="btn btn-warning editarProducto" data-toggle="modal"
+															data-target="#exampleMo"> <i class="fa fa-pencil-square-o"
+																aria-hidden="true"></i></a>
+																
+																
+																<a th:href="@{/producto/eliminar/}+${item.id}"
+															class="btn btn-danger"
+															onclick="return confirm('Desea Eliminar?')"><i
+																class="fa fa-trash" aria-hidden="true"></i></a>
+																
+																
+																</th  >
+                                       
+                                  </tr>
+                                  
+                                
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+           
+
+
+            
+        </div>
+        </div>
+
+
+
+
+		</div>
+
+		<footer th:replace="layouts/fragmentos :: derechos"></footer>
+
+	</div>
+	</div>
+	
+	
+
+    <div class="modal fade" id="exampleMo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Editar Datos del Producto</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+          <form th:action="@{/producto/form}" th:object="${producto}" method="post">
+          
+					<input type="hidden" th:field="*{id}" />
+           <h6>Codigo del Producto</h6>
+            <div class="input-group mb-3">
+      <div class="input-group-prepend">
+      </div>
+    <input type="text" class="form-control" id="txtCodigo" name="nombre"
+								placeholder="Ingrese nombre de la categoria" aria-label="Username"
+								aria-describedby="basic-addon1" th:field="*{codigopro}">
+    </div>
+    
+            <h6>Descripción del Producto</h6>
+            <div class="input-group mb-3">
+      <div class="input-group-prepend">
+      </div>
+      <input type="text" class="form-control" id="txtNombre" name="nombre"
+								placeholder="Ingrese nombre de la categoria" aria-label="Username"
+								aria-describedby="basic-addon1" th:field="*{nombrepro}">
+    </div>
+    
+    
+                      
+    
+    
+    <h6>Categoria del Producto</h6>
+            <div class="input-group mb-3">
+      <div class="input-group-prepend">
+      </div>
+       <select class="form-control"   id="txtCategoria" th:field="*{id_cat}">
+                           <option value="">seleccione una opcion</option>
+									<option th:each="item : ${listaCategoria}" th:value="${item.id}"
+										th:text="${item.nombre}"></option>
+                          </select>
+    </div>
+            
+            
+            <h6>Precio Compra</h6>
+            <div class="input-group mb-3">
+      <div class="input-group-prepend">
+      </div>
+      <input type="text" class="form-control" id="txtPcom" name="nombre"
+								placeholder="Ingrese nombre de la categoria" aria-label="Username"
+								aria-describedby="basic-addon1" th:field="*{pcompra}">
+    </div>
+
+    <h6>Precio Venta</h6>
+            <div class="input-group mb-3">
+      <div class="input-group-prepend">
+      </div>
+     <input type="text" class="form-control" id="txtPven" name="nombre"
+								placeholder="Ingrese nombre de la categoria" aria-label="Username"
+								aria-describedby="basic-addon1" th:field="*{pventa}">
+    </div>
+
+     
+
+   
+    
+ 
+       
+    
+          </div>
+          <div id="boton" class="modal-footer text-left">
+            <input type="reset" value="Cancelar" id="registrar" class="btn btn-primary" data-dismiss="modal" />
+           <button type="submit"   class="btn btn-success">Guardar Cambios</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+ 
+	<script th:src="@{/js/jquery.min.js}"></script>
+	<script th:src="@{/js/jquery-3.6.0.min.js}"></script>
+	<script th:src="@{/js/sweetalert2.all.min.js}"></script>
+	<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+	<script th:src="@{/js/custom.min.js}"></script>
+	<script th:src="@{/js/scripts.js}"></script>
+	<script th:src="@{/js/simple-datatables@latest.js}"></script>
+	<script th:src="@{/js/datatables-simple-demo.js}"></script>
+	<script th:src="@{/js/alert.js}"></script>
+		<script th:src="@{/js/productos.js}"></script>
+
+</body>
+</html>
